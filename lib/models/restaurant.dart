@@ -23,7 +23,7 @@ class Restaurant {
     return Restaurant(
       'Restaurant',
       '20-30 min',
-      '2.4km',
+      '3.4km',
       'Restaurant',
       'assets/images/res_logo.png',
       'Orange sandwiches is delicious',
