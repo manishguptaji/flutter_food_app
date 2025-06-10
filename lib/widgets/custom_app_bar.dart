@@ -4,9 +4,11 @@ class CustomAppBar extends StatelessWidget {
 
   final IconData leftIcon;
   final IconData rightIcon;
+  final IconData? wishListIcon;
   final Function? leftCallback;
+  final Function? wishListCallback;
 
-  CustomAppBar(this.leftIcon, this.rightIcon, {this.leftCallback});
+  CustomAppBar(this.leftIcon, this.rightIcon, {this.wishListIcon, this.leftCallback, this.wishListCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,13 @@ class CustomAppBar extends StatelessWidget {
             onTap: leftCallback != null ? () => leftCallback!() : null,
             child: _buildIcon(leftIcon),
           ),
+          Spacer(),
+          if (wishListIcon != null)
+            GestureDetector(
+              onTap: wishListCallback != null ? () => wishListCallback!() : null,
+              child: _buildIcon(wishListIcon!),
+            ),
+          SizedBox(width: 10), // Space between wishlist and right icon
           _buildIcon(rightIcon),
         ],
       ),

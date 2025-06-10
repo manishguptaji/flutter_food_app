@@ -27,6 +27,11 @@ class _HomePageState extends State<HomePage> {
           CustomAppBar(
             Icons.arrow_back_ios_outlined,
             Icons.search_outlined,
+            wishListIcon: Icons.favorite_outline,
+            wishListCallback: () {
+              // Handle wishlist icon tap
+
+              },
           ),
           RestaurantInfo(),
           FoodList(selected, (int index) {
